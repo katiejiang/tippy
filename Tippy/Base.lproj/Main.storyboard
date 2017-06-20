@@ -55,7 +55,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="m0s-VQ-qGt"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0id-cD-Tfq">
                                 <rect key="frame" x="37" y="116" width="23" height="21"/>
@@ -70,15 +73,33 @@
                                 <segments>
                                     <segment title="18%"/>
                                     <segment title="20%"/>
-                                    <segment title="22%"/>
+                                    <segment title="25%"/>
                                 </segments>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="mhN-8O-EbT"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BKH-pa-iNj" appends="YES" id="sLp-gr-0yq"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="GX8-vd-cGL"/>
+                    <connections>
+                        <outlet property="billField" destination="VYF-2e-Q2a" id="0Kn-mT-FWC"/>
+                        <outlet property="tipControl" destination="GyW-Om-CDm" id="4Fc-vx-opA"/>
+                        <outlet property="tipLabel" destination="vq2-0l-VUP" id="YS3-Un-Wtg"/>
+                        <outlet property="totalLabel" destination="u0X-4z-xej" id="bsv-30-tK8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BKH-pa-iNj">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="rqN-8f-Xm9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="670.5" y="154.5"/>
         </scene>
