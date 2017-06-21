@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         tipControl.setTitle("\(option1)%", forSegmentAt: 0)
         tipControl.setTitle("\(option2)%", forSegmentAt: 1)
         tipControl.setTitle("\(option3)%", forSegmentAt: 2)
+        
+        calculateTip(Any)
     }
 
     override func didReceiveMemoryWarning() {
